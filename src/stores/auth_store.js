@@ -2,11 +2,9 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
 import rootReducer from "../reducers";
-import DevTools from "./devTools";
+import DevTools from "../lib/devTools";
 
-const enhancer = __DEVELOPMENT__
-	? compose(applyMiddleware(thunk), DevTools.instrument())
-	: compose(applyMiddleware(thunk));
+const enhancer = compose(applyMiddleware(thunk), DevTools.instrument());
 
 function configureStore(initialState) {
 	const store = createStore(rootReducer, initialState, enhancer);
@@ -20,4 +18,4 @@ function configureStore(initialState) {
 	return store;
 }
 
-export const authStore = configureStore();
+export default configureStore();
