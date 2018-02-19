@@ -8,8 +8,8 @@ module.exports = function override(config, env) {
 	);
 	config = rewireLess.withLoaderOptions({
 		modifyVars: {
-			"@primary-color": "#5259F6",
-			"@layout-footer-background": "#1F2135"
+			"@primary-color": "#5259F6"
+			// "@layout-footer-background": "#1F2135"
 		}
 	})(config, env);
 	return config;

@@ -9,7 +9,7 @@ export default class Routes extends Component {
 		return (
 			<BrowserRouter>
 				<div>
-					<Route path="/dashboard" component={Dashboard} />
+					<Route path="/admin" component={Dashboard} />
 				</div>
 			</BrowserRouter>
 		);
